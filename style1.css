@@ -3,6 +3,33 @@ html, body {
   margin: 0;
 }
 
+h1 {
+  color: white;
+  text-shadow:
+    0 0 5px #ac0123,
+    0 0 10px #ac0123,
+    0 0 20px #ac0123,
+    0 0 40px #ac0123,
+    0 0 50px #ac0123;
+  font-size: 48px;
+  display: inline-block;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 1;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
 .page-content {
     flex: 1 0 auto;
 }
