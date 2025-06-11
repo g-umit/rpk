@@ -24,6 +24,72 @@ function toggleContent(clickedHeader) {
   }
 }
 
+function saveEntries() {
+  const entries = [];
+  const allContents = document.querySelectorAll('.day-content');
+  allContents.forEach(content => {
+    const dayEntries = [];
+    content.querySelectorAll('.entry-item').forEach(entryDiv => {
+      const entryText = entryDiv.querySelector('span').textContent;
+      dayEntries.push(entryText);
+    });
+    if (dayEntries.length > 0) {
+      entries.push({
+        day: content.previousElementSibling.textContent.trim(),
+        entries: dayEntries
+      });
+    }
+  });
+  localStorage.setItem('schedule', JSON.stringify(entries));
+}
+
+function loadEntries() {
+  const savedEntries = localStorage.getItem('schedule');
+  if (savedEntries) {
+    const entries = JSON.parse(savedEntries);
+    entries.forEach(dayEntry => {
+      const dayHeader = [...document.querySelectorAll(".day-header")]
+        .find(header => header.textContent.startsWith(dayEntry.day));
+      if (dayHeader) {
+        const contentDiv = dayHeader.nextElementSibling;
+        dayEntry.entries.forEach(entry => {
+          addEntryToDay(contentDiv, entry);
+        });
+      }
+    });
+  }
+}
+
+function addEntryToDay(contentDiv, entry) {
+  const entryDiv = document.createElement("div");
+  entryDiv.classList.add("entry-item");
+  entryDiv.style.display = "flex";
+  entryDiv.style.justifyContent = "space-between";
+  entryDiv.style.alignItems = "center";
+  entryDiv.style.marginBottom = "5px";
+  entryDiv.style.gap = "10px";
+  entryDiv.style.fontSize = "52px";
+  entryDiv.style.color = "blue";
+
+  const entryText = document.createElement("span");
+  entryText.textContent = entry;
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Löschen";
+  deleteBtn.style.padding = "8px";
+  deleteBtn.style.fontSize = "36px";
+  deleteBtn.style.cursor = "pointer";
+  deleteBtn.style.border = "8px solid #ccc";
+  deleteBtn.onclick = () => {
+    contentDiv.removeChild(entryDiv);
+    saveEntries();  // Nach Löschen speichern
+  };
+
+  entryDiv.appendChild(entryText);
+  entryDiv.appendChild(deleteBtn);
+  contentDiv.appendChild(entryDiv);
+}
+
 function addEntry() {
   const day = document.getElementById("day-select").value;
   const entry = document.getElementById("new-entry").value.trim();
@@ -62,6 +128,7 @@ function addEntry() {
       deleteBtn.style.border = "8px solid #ccc";
       deleteBtn.onclick = () => {
         contentDiv.removeChild(entryDiv);
+        saveEntries();  // Nach Löschen speichern
       };
 
       entryDiv.appendChild(entryText);
@@ -72,11 +139,17 @@ function addEntry() {
       if (!contentDiv.classList.contains("open")) {
         header.click(); // Öffne automatisch den Tag
       }
+
+      saveEntries();  // Nach Hinzufügen speichern
       return;
     }
   }
   alert("Tag nicht gefunden.");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadEntries();
+});
 
 function toggleMenu() {
   const sidebar = document.getElementById("sidebar");
@@ -96,3 +169,4 @@ function showAdventskalender() {
     block: 'start'
   });
 }
+
