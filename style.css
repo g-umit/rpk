@@ -80,10 +80,8 @@
   padding: 12px;
   border-radius: 8px;
   border: 8px solid #ccc;
-}
-button {
   position: relative;
-  left: 72%;
+  left: 72%;  
 }
 
 
