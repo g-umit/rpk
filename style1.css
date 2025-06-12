@@ -15,25 +15,6 @@ h1 {
   display: inline-block;
 }
 
-.letter {
-  display: inline-block;
-  opacity: 1;
-  animation: blink 1s infinite alternate;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-.page-content {
-    flex: 1 0 auto;
-}
-
 body {
     font-family: "Mountains of Christmas", serif;
     font-weight: 400;
