@@ -1,28 +1,3 @@
-window.onload = function() {
-  const h1 = document.querySelector('.blinking-text');
-  const letters = h1.textContent.split('');
-  h1.textContent = ''; // Leere den Inhalt von h1
-
-  // Füge für jedes Zeichen ein <span> mit der Klasse "letter" hinzu
-  letters.forEach(letter => {
-    const span = document.createElement('span');
-    span.textContent = letter;
-    span.classList.add('letter');
-    h1.appendChild(span);
-  });
-
-  // Zufälliges Blinken aktivieren
-  const letterElements = document.querySelectorAll('.letter');
-  setInterval(() => {
-    letterElements.forEach(letter => {
-      if (Math.random() > 0.5) {
-        letter.style.animation = 'blink 1s infinite alternate';
-      } else {
-        letter.style.animation = 'none';
-    });
-  }, 200);
-};
-
 function updateDoor(div, text, color) {
     div.innerHTML = text;
     div.style.backgroundColor = color;
