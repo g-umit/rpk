@@ -129,6 +129,27 @@ function addEntry() {
       deleteBtn.onclick = () => {
         contentDiv.removeChild(entryDiv);
         saveEntries();  // Nach Löschen speichern
+
+      // Zeit extrahieren und Push-Benachrichtigung planen
+const timeMatch = entry.match(/(\d{1,2}):(\d{2})/);
+if (timeMatch) {
+  const now = new Date();
+  const entryTime = new Date();
+  entryTime.setHours(parseInt(timeMatch[1]));
+  entryTime.setMinutes(parseInt(timeMatch[2]));
+  entryTime.setSeconds(0);
+  entryTime.setMilliseconds(0);
+
+  const delay = entryTime.getTime() - now.getTime() - 5 * 60 * 1000;
+
+  if (delay > 0) {
+    schedulePushNotification(
+      `Termin um ${timeMatch[0]}`,
+      'In 5 Minuten beginnt dein Termin!',
+      delay
+    );
+  }
+}
       };
 
       entryDiv.appendChild(entryText);
@@ -170,3 +191,29 @@ function showAdventskalender() {
   });
 }
 
+// Registrierung des Service Workers
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker registriert'));
+}
+
+// Benachrichtigungs-Erlaubnis anfragen
+if ('Notification' in window && Notification.permission !== 'granted') {
+  Notification.requestPermission();
+}
+
+function schedulePushNotification(title, body, delayInMs) {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    setTimeout(() => {
+      navigator.serviceWorker.ready.then(registration => {
+        if (registration.active) {
+          registration.active.postMessage({
+            type: "push",
+            title,
+            body
+          });
+        }
+      });
+    }, delayInMs);
+  }
+}
