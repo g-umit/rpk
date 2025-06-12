@@ -11,7 +11,7 @@ self.addEventListener("install", event => {
         "script.js",
         "script1.js",
         "manifest.json",
-        "icon-192.png" 
+        "icon-192.png"
       ]);
     })
   );
@@ -23,4 +23,17 @@ self.addEventListener("fetch", event => {
       return response || fetch(event.request);
     })
   );
+});
+
+// Für manuelle Push aus der Seite (z. B. geplante Erinnerung)
+self.addEventListener("message", event => {
+  if (event.data && event.data.type === "push") {
+    const { title, body } = event.data;
+    self.registration.showNotification(title, {
+      body,
+      vibrate: [200, 100, 200],
+      icon: "icon-192.png",
+      badge: "icon-192.png"
+    });
+  }
 });
