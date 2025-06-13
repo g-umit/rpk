@@ -66,7 +66,7 @@ function addEntryToDay(contentDiv, entry) {
   entryDiv.style.display = "flex";
   entryDiv.style.justifyContent = "space-between";
   entryDiv.style.alignItems = "center";
-  entryDiv.style.marginBottom = "5px";
+  entryDiv.style.padding = "12px";
   entryDiv.style.gap = "10px";
   entryDiv.style.fontSize = "52px";
   entryDiv.style.color = "blue";
