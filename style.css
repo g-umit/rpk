@@ -71,8 +71,8 @@
     .form-control {
   font-size: 40px;
   padding: 16px;
-  width: 300px;
-  margin-bottom: 16px;
+  margin: 12px;
+  width: auto;
   border: 8px solid #ccc;
 }
 
@@ -82,7 +82,7 @@
   border-radius: 8px;
   border: 8px solid #ccc;
   position: relative;
-  left: 67%;  
+  left: 66%;
 }
 
 
