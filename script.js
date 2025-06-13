@@ -76,7 +76,7 @@ function addEntryToDay(contentDiv, entry) {
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Löschen";
-  deleteBtn.style.padding = "8px";
+  deleteBtn.style.padding = "12px";
   deleteBtn.style.fontSize = "36px";
   deleteBtn.style.cursor = "pointer";
   deleteBtn.style.border = "8px solid #ccc";
@@ -110,7 +110,7 @@ function addEntry() {
       entryDiv.style.display = "flex";
       entryDiv.style.justifyContent = "space-between";
       entryDiv.style.alignItems = "center";
-      entryDiv.style.marginBottom = "5px";
+      entryDiv.style.padding = "12px";
       entryDiv.style.gap = "10px";
       entryDiv.style.fontSize = "52px";
       entryDiv.style.color = "blue";
@@ -122,7 +122,7 @@ function addEntry() {
       // Löschen-Button
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "Löschen";
-      deleteBtn.style.padding = "8px";
+      deleteBtn.style.padding = "12px";
       deleteBtn.style.fontSize = "36px";
       deleteBtn.style.cursor = "pointer";
       deleteBtn.style.border = "8px solid #ccc";
