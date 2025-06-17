@@ -1,6 +1,7 @@
 {
   "name": "RPK Marburg",
   "short_name": "RPK",
+  "author": "Ümit Güler"
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
