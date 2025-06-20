@@ -1,74 +1,86 @@
-    body {
-      font-family: Arial, sans-serif;
-      margin: 100px;
-    }
-    .pause {
-      color: red;
-    }
-    .sprechstunde {
-      background-color: #fff9c4;
-    }
-    .essenszeit {
-      color: green;
-    }
-    .stretching {
-      color: #00796b;
-    }
-    .unterstrichen {
-      text-decoration: underline;
-    }
-    .grau {
-      background-color: #f5f5f5;
-    }
-    caption {
-      font-weight: bold;
-      margin-bottom: 40px;
-      font-size: 60px;
-      text-align: left;
-    }
-    h1 {
-      font-size: 80px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 60px;
-      margin: 150px 0 50px;
-    }
-    p {
-        font-size: 52px;
-    }
-    .day-section {
-      border: 12px solid #ccc;
-      margin-bottom: 60px;
-      border-radius: 12px;
-      overflow: hidden;
-      max-width: 52vh;
-    }
-    .day-header {
-      background-color: #f0f0f0;
-      font-size: 60px;
-      font-weight: bold;
-      padding: 12px;
-      cursor: pointer;
-      user-select: none;
-    }
-    .day-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      padding: 0 12px;
-      background-color: #fff;
-    }
-    .day-content.open {
-      padding: 12px;
-      max-height: 60vh;
-      max-width: 36vh;
-      overflow-y: auto;
-    }
-    label {
-      font-size: 60px;
-    }
-    .form-control {
+body {
+  font-family: Arial, sans-serif;
+  margin: 100px;
+}
+
+.pause {
+  color: red;
+}
+
+.sprechstunde {
+  background-color: #fff9c4;
+}
+
+.essenszeit {
+  color: green;
+}
+
+.stretching { 
+  color: #00796b; 
+}
+
+.unterstrichen { 
+  text-decoration: underline; 
+}
+
+.grau {
+  background-color: #f5f5f5; 
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-size: 60px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 60px;
+  margin: 150px 0 50px;
+}
+
+p { font-size: 52px; }
+
+.day-section {
+  border: 12px solid #ccc;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 52vh;
+}
+
+.day-header {
+  background-color: #f0f0f0;
+  font-size: 60px;
+  font-weight: bold;
+  padding: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.day-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 12px;
+  background-color: #fff;
+}
+
+.day-content.open {
+  padding: 12px;
+  max-height: 60vh;
+  max-width: 36vh;
+  overflow-y: auto;
+}
+
+label { font-size: 60px; }
+
+.form-control {
   font-size: 40px;
   padding: 16px;
   margin: 12px;
@@ -85,15 +97,30 @@
   left: 67%;
 }
 
+.pause { 
+  color: red; 
+}
 
-    .pause { color: red; }
-    .sprechstunde { background-color: #fff9c4; }
-    .essenszeit { color: green; }
-    .stretching { color: #00796b; }
-    .unterstrichen { text-decoration: underline; }
-    .grau { background-color: #f5f5f5; }
+.sprechstunde { 
+  background-color: #fff9c4; 
+}
 
-/* Sidebar (Slide-in-Menü) */
+.essenszeit { 
+  color: green; 
+}
+
+.stretching {
+  color: #00796b; 
+}
+
+.unterstrichen { 
+  text-decoration: underline; 
+}
+
+.grau { 
+  background-color: #f5f5f5; 
+}
+
 .sidebar {
   height: 100%;
   width: 0;
@@ -132,7 +159,6 @@
   cursor: pointer;
 }
 
-/* Hamburger Icon */
 .hamburger-icon {
   font-size: 80px;
   cursor: pointer;
@@ -142,6 +168,7 @@
   z-index: 1100;
   user-select: none;
 }
+
 footer {
   text-align: center;
   margin: 150px 0 100px;
