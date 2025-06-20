@@ -31,90 +31,85 @@ h1 {
 }
 
 .page-content {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 body {
-    font-family: "Mountains of Christmas", serif;
-    font-weight: 400;
-    background-color: rgb(245, 90, 79);
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 10px;
-    -webkit-tap-highlight-color: transparent;
-    overscroll-behavior: none;
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 400;
+  background-color: rgb(245, 90, 79);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 10px;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
 }
 
-/* Container im Grid-Layout */
 .calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(111px, 1fr));
-    gap: clamp(10px, 5vw, 44px);
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    padding: 0 10px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(111px, 1fr));
+  gap: clamp(10px, 5vw, 44px);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
-/* Türchen-Stil */
 .door {
-    background-color: rgb(245, 67, 54);
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(70px, 20vw, 80px);
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    padding: clamp(1px, 0vw, 16px);
-    border-radius: 15px;
-    border: 3px solid #ac0123;
-    box-shadow: 0 0 10px #ac0123, 0 0 20px #ac0123;
-    color: white;
-    text-shadow: 0 0 2px black, 0 0 4px black;
-    user-select: none;
-    -webkit-user-select: none;
-    min-width: 40px;
-    min-height: 40px;
-    touch-action: manipulation;
-    text-align: center;
-    word-wrap: break-word;
-    hyphens: auto;
+  background-color: rgb(245, 67, 54);
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(70px, 20vw, 80px);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  padding: clamp(1px, 0vw, 16px);
+  border-radius: 15px;
+  border: 3px solid #ac0123;
+  box-shadow: 0 0 10px #ac0123, 0 0 20px #ac0123;
+  color: white;
+  text-shadow: 0 0 2px black, 0 0 4px black;
+  user-select: none;
+  -webkit-user-select: none;
+  min-width: 40px;
+  min-height: 40px;
+  touch-action: manipulation;
+  text-align: center;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
-/* Touch-Effekt */
 .door:active {
-    border-color: #39ff14;
-    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  border-color: #39ff14;
+  box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
 }
 
-/* Angepasste Schriftgröße für geöffnete Türchen */
 .door.opened {
-    font-size: clamp(18px, 22px, 26px);
-    padding: clamp(4px, 1vw, 8px);
-    line-height: 1.2;
+  font-size: clamp(18px, 22px, 26px);
+  padding: clamp(4px, 1vw, 8px);
+  line-height: 1.2;
 }
 
-/* Schnee-Effekt */
 .snowflake {
-    color: #ffffff;
-    font-size: 1.8em;
-    font-family: Arial, sans-serif;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #bbfaff, 0 0 20px #bbfaff, 0 0 30px #e0ffff;
-    position: fixed;
-    top: -10%;
-    z-index: 9999;
-    user-select: none;
-    cursor: default;
-    pointer-events: none;
-    animation: snowflakes-shake 3s ease-in-out infinite;
+  color: #ffffff;
+  font-size: 1.8em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #bbfaff, 0 0 20px #bbfaff, 0 0 30px #e0ffff;
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  animation: snowflakes-shake 3s ease-in-out infinite;
 }
 
 .snowflake .inner {
@@ -131,7 +126,6 @@ body {
     50% { transform: translateX(80px); }
 }
 
-/* Positionierung der einzelnen Schneeflocken */
 .snowflake:nth-of-type(1) { left: 10%; animation-delay: 1s; }
 .snowflake:nth-of-type(1) .inner { animation-delay: 1s; }
 .snowflake:nth-of-type(2) { left: 20%; animation-delay: 0.5s; }
@@ -155,8 +149,7 @@ body {
 .snowflake:nth-of-type(11) { left: 65%; animation-delay: 2.5s; }
 .snowflake:nth-of-type(11) .inner { animation-delay: 4s; }
 
-footer,
-.back-link {
+footer, .back-link {
   flex-shrink: 0;
 }
 
