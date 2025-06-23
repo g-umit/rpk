@@ -6,10 +6,13 @@ self.addEventListener("install", event => {
         "adventskalender.html",
         "dienste.html",
         "laufmappe.html",
+        "notizen.html",
         "style.css",
         "style1.css",
+        "style2.css",
         "script.js",
         "script1.js",
+        "script2.js",
         "manifest.json",
         "icon-192.png"
       ]);
