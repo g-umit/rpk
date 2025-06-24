@@ -97,20 +97,33 @@
 
   <h2>Zusätzlichen Termin einfügen</h2>
   <label for="day-select">Wochentag:</label>
-  <select id="day-select" class="form-control">
-    <option value="Montag">Montag</option>
-    <option value="Dienstag">Dienstag</option>
-    <option value="Mittwoch">Mittwoch</option>
-    <option value="Donnerstag">Donnerstag</option>
-    <option value="Freitag">Freitag</option>
-  </select>
+  <div class="chrome-border">
+    <select id="day-select" class="form-control">
+      <option value="Montag">Montag</option>
+      <option value="Dienstag">Dienstag</option>
+      <option value="Mittwoch">Mittwoch</option>
+      <option value="Donnerstag">Donnerstag</option>
+      <option value="Freitag">Freitag</option>
+    </select>
+  </div>
 
   <br><br>
 
   <label for="new-entry">Termin:</label>
-  <input type="text" id="new-entry" class="form-control" placeholder="z. B. 13:30 Uhr Hr. Winkler">
-  <button onclick="addEntry()" class="form-button">Hinzufügen</button>
+  <div class="chrome-border" style="width: 100%; max-width: 540px;">
+    <input type="text" id="new-entry" class="form-control" placeholder="z. B. 13:30 Uhr Hr. Winkler">
+  </div>
 
+  <br><br>
+
+  <div style="text-align: right; max-width: 600px;">
+    <div class="chrome-border" style="display: inline-block;">
+      <button onclick="addEntry()" class="form-button">Hinzufügen</button>
+    </div>
+  </div>
+
+  <br><br><br><br>
+  
   <footer>
     <p>&copy; 2025 Ümit Güler</p>
   </footer>
