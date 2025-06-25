@@ -5,19 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style2.css">
 </head>
-<body>
-  <div class="app-container">
-    <h1>Notizen</h1>
-    <div class="note-input">
-      <textarea id="noteInput" placeholder="Schreib eine neue Notiz..."></textarea>
-      <button onclick="addNote()">Hinzufügen</button>
-    </div>
-    <div id="notesList" class="notes-list"></div>
-    <div class="footer">
-      <p>&copy; 2025 Ümit Güler</p>
-      <p><a class="back-link" href="index.html">🔙 Zurück zum Wochenplan</a></p>
-    </div> 
+<body class="classic">
+  <header>
+    <h1>📝 Mein Notizblock</h1>
+    <select id="theme-selector">
+      <option value="classic">Klassisch</option>
+      <option value="dark">Dunkel</option>
+      <option value="modern">Modern</option>
+      <option value="retro">Retro</option>
+      <option value="feminine">Blumenwiese</option>
+      <option value="neon">Neon</option>
+      <option value="threed">3D Stil</option>
+    </select>
+  </header>
+  <div class="container">
+    <textarea id="note" placeholder="Schreib deine Notiz hier..."></textarea>
   </div>
+
+  <br><br><br><br>
+
+  <footer>
+    <p>&copy; 2025 Ümit Güler</p>
+  </footer>
+  
+  <a class="back-link" href="index.html">🔙 Zurück zum Wochenplan</a>
 
   <script src="script2.js"></script>
 </body>
