@@ -1,108 +1,145 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      background: #f1c40f;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .container {
+      padding: 1rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80vh;
+      padding: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      border: none;
+      box-sizing: border-box;
+      resize: none;
+    }
+
+    /* ==== Themes ==== */
+    body.classic {
+      background: #fffbe6;
+    }
+
+    body.classic textarea {
+      background: #fff8d9;
+      border-left: 5px solid #f39c12;
+      font-family: "Courier New", monospace;
+    }
+
+    body.dark {
+      background: #1e1e1e;
+    }
+
+    body.dark textarea {
+      background: #2c2c2c;
+      color: #f1f1f1;
+      font-family: "Consolas", monospace;
+    }
+
+    body.modern {
+      background: #f5f5f5;
+    }
+
+    body.modern textarea {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body.retro {
+      background: #faf3e0;
+    }
+
+    body.retro textarea {
+      background: #fff2cc;
+      color: #5d4037;
+      font-family: "Georgia", serif;
+      border-left: 5px dashed #c49b66;
+    }
+
+    /* 🌸 Feminin - Blumenwiese */
+body.feminine {
+  background: url('https://images.unsplash.com/photo-1589310245830-37878e3b18c6?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #5e2c6f;
 }
 
-.app-container {
-    background-color: white;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 20px;
+body.feminine textarea {
+  background: rgba(255, 240, 250, 0.9);
+  color: #6b306e;
+  font-family: "Georgia", serif;
+  border-radius: 10px;
+  border: 2px solid #e8a6d8;
+  box-shadow: 0 0 10px rgba(255, 180, 230, 0.5);
 }
 
-h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
+/* 🌈 Neon - Cyber Glow */
+body.neon {
+  background: #000;
+  color: #0ff;
 }
 
-.note-input {
-    display: flex;
-    flex-direction: column;
+body.neon textarea {
+  background: #111;
+  color: #39ff14;
+  font-family: "Courier New", monospace;
+  border: 2px solid #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  box-shadow: 0 0 15px #f0f;
 }
 
-#noteInput {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    resize: none;
-    min-height: 80px;
+body.neon .preview {
+  background: #0a0a0a;
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    margin-top: 10px;
-    cursor: pointer;
+/* 🧊 3D-Stil */
+body.threed {
+  background: #e0e0e0;
+  color: #333;
 }
 
-button:hover {
-    background-color: #45a049;
+body.threed textarea {
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2), -5px -5px 15px rgba(255,255,255,0.6);
+  font-family: "Segoe UI", sans-serif;
+  padding: 1.2rem;
+  transition: all 0.2s ease;
 }
 
-/* Notizliste */
-.notes-list {
-    margin-top: 20px;
+body.threed textarea:focus {
+  outline: none;
+  box-shadow: inset 3px 3px 10px rgba(0,0,0,0.1), inset -3px -3px 10px rgba(255,255,255,0.7);
 }
 
-.note {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.note button {
-    background-color: red;
-    border: none;
-    color: white;
-    padding: 5px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.note button:hover {
-    background-color: #d9534f;
-}
-
-.footer {
-    margin: 60px 0 0;
-    text-align: center;
-    font-size: 20px;
-    color: #777;   
-}
-
-.footer a {
-    color: #4CAF50;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-p {
-    margin: 12px;
+body.threed .preview {
+  background: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
