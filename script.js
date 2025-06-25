@@ -172,9 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
   loadEntries();
 });
 
+// Funktion zum Öffnen und Schließen des Menüs
 function toggleMenu() {
-  const sidebar = document.getElementById("sidebar");
-  sidebar.style.width = (sidebar.style.width === "600px") ? "0" : "600px";
+  var sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("open");
 }
 
 function showAdventskalender() {
