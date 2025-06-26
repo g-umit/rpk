@@ -113,6 +113,7 @@ body.neon textarea {
   color: #ffda95;
   font-family: "Tilt Neon", sans-serif;
   border: 8px solid #c5ecff;
+  border-radius: 10px;
   text-shadow:             
     0 0 4px #f14400,         
     0 0 8px #f14400,         
@@ -120,15 +121,15 @@ body.neon textarea {
     0 0 24px #f14400; 
 
   /* Neon-Außen- und Innen-Schein */
-  box-shadow: 
-    inset 0 0 12px #00aaff,       
-    inset 0 0 20px #00aaff,      
-    inset 0 0 28px #00aaff,
-    0 0 12px #00aaff,         
-    0 0 20px #00aaff,         
-    0 0 28px #00aaff;         
+  box-shadow:
+    inset 0 0 10px #00aaff,
+    inset 0 0 15px #00aaff,
+    0 0 10px #00aaff,
+    0 0 15px #00aaff;        
   
-  border-radius: 10px;
+  will-change: box-shadow;
+  transform: translateZ(0);
+  -webkit-appearance: none;
 }
 
 /* 🧊 3D-Stil */
