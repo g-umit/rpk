@@ -131,12 +131,6 @@ body.neon textarea {
   border-radius: 10px;
 }
 
-body.neon .preview {
-  background: #0a0a0a;
-  color: #00FFB2;
-  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 15px #f0f; /* Neonlila Schein für Text */
-}
-
 /* 🧊 3D-Stil */
 body.threed {
   background: #e0e0e0;
