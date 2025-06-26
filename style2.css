@@ -1,88 +1,88 @@
 body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    header {
-      background: #f1c40f;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
+header {
+  background: #f1c40f;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
 
-    select {
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
 
-    .container {
-      padding: 1rem;
-    }
+.container {
+  padding: 1rem;
+}
 
-    textarea {
-      width: 100%;
-      height: 80vh;
-      padding: 1rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      border: none;
-      box-sizing: border-box;
-      resize: none;
-    }
+textarea {
+  width: 100%;
+  height: 80vh;
+  padding: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border: none;
+  box-sizing: border-box;
+  resize: none;
+}
 
-    /* ==== Themes ==== */
-    body.classic {
-      background: #fffbe6;
-    }
+/* ==== Themes ==== */
+body.classic {
+  background: #fffbe6;
+}
 
-    body.classic textarea {
-      background: #fff8d9;
-      border-left: 5px solid #f39c12;
-      font-family: "Courier New", monospace;
-    }
+body.classic textarea {
+  background: #fff8d9;
+  border-left: 5px solid #f39c12;
+  font-family: "Courier New", monospace;
+}
 
-    body.dark {
-      background: #1e1e1e;
-    }
+body.dark {
+  background: #1e1e1e;
+}
 
-    body.dark textarea {
-      background: #2c2c2c;
-      color: #f1f1f1;
-      font-family: "Consolas", monospace;
-    }
+body.dark textarea {
+  background: #2c2c2c;
+  color: #f1f1f1;
+  font-family: "Consolas", monospace;
+}
 
-    body.modern {
-      background: #f5f5f5;
-    }
+body.modern {
+  background: #f5f5f5;
+}
 
-    body.modern textarea {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      font-family: "Segoe UI", sans-serif;
-    }
+body.modern textarea {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", sans-serif;
+}
 
-    body.retro {
-      background: #faf3e0;
-    }
+body.retro {
+  background: #faf3e0;
+}
 
-    body.retro textarea {
-      background: #fff2cc;
-      color: #5d4037;
-      font-family: "Georgia", serif;
-      border-left: 5px dashed #c49b66;
-    }
+body.retro textarea {
+  background: #fff2cc;
+  color: #5d4037;
+  font-family: "Georgia", serif;
+  border-left: 5px dashed #c49b66;
+}
 
-    /* 🌸 Feminin - Blumenwiese */
+/* 🌸 Feminin - Blumenwiese */
 body.feminine {
-  background: url('https://images.unsplash.com/photo-1589310245830-37878e3b18c6?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background: url('img/bg1.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #5e2c6f;
 }
@@ -99,22 +99,43 @@ body.feminine textarea {
 /* 🌈 Neon - Cyber Glow */
 body.neon {
   background: #000;
-  color: #0ff;
+  font-family: "Tilt Neon", sans-serif;
+  color: #ffda95;
+  text-shadow:             
+    0 0 2px #f14400,         
+    0 0 4px #f14400,         
+    0 0 8px #f14400, 
+    0 0 16px #f14400; 
 }
 
 body.neon textarea {
   background: #111;
-  color: #39ff14;
-  font-family: "Courier New", monospace;
-  border: 2px solid #0ff;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-  box-shadow: 0 0 15px #f0f;
+  color: #ffc355;
+  font-family: "Tilt Neon", sans-serif;
+  border: 8px solid #c5ecff;
+  text-shadow:             
+    0 0 4px #f14400,         
+    0 0 8px #f14400,         
+    0 0 16px #f14400, 
+    0 0 24px #f14400; 
+
+  /* Neon-Außen- und Innen-Schein */
+  box-shadow: 
+    0 0 4px #00aaff,            
+    inset 0 0 12px #00aaff,       
+    inset 0 0 20px #00aaff,      
+    inset 0 0 28px #00aaff,     
+    0 0 12px #00aaff,         
+    0 0 20px #00aaff,         
+    0 0 28px #00aaff;         
+  
+  border-radius: 10px;
 }
 
 body.neon .preview {
   background: #0a0a0a;
-  color: #f0f;
-  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f;
+  color: #00FFB2;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 15px #f0f; /* Neonlila Schein für Text */
 }
 
 /* 🧊 3D-Stil */
@@ -142,4 +163,23 @@ body.threed .preview {
   background: #fdfdfd;
   border-radius: 10px;
   box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+footer,
+.back-link {
+  flex-shrink: 0;
+}
+
+.back-link {
+  font-size: 24px;
+  text-align: left;
+  padding: 4px;
+  background: transparent;
+}
+
+footer {
+  font-size: 24px;
+  text-align: center;
+  padding: 4px;
+  background: transparent;
 }
