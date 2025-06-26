@@ -167,10 +167,14 @@ footer,
 }
 
 .back-link {
+  color: #c5ecff;
   font-size: 24px;
-  text-align: left;
   padding: 4px;
   background: transparent;
+  text-shadow: 
+    0 0 8px #00aaff,
+    0 0 16px #00aaff,
+    0 0 14px #00aaff; 
 }
 
 footer {
