@@ -189,6 +189,7 @@ footer {
 
 
 
+
 /* Dunkles Hologramm Glas-Display */
 body.hologram {
   background: #0a0a0a; /* Dunkler Hintergrund für das Glasdisplay */
@@ -200,13 +201,34 @@ body.hologram {
 
 /* Glas-Effekt */
 body.hologram .container {
-  background: rgba(0, 0, 0, 0); /* Vollständig durchsichtiger Hintergrund */
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 -4px 6px rgba(255, 255, 255, 0.3); /* Leichte Schattierungen für die Tiefe */
-  backdrop-filter: blur(10px); /* Weiches Glasunschärfe */
-  border: 2px solid rgba(0, 255, 255, 0.7); /* Nur der Rand ist sichtbar */
+  position: relative;
   padding: 2rem;
-  position: relative; /* Für die Linienverbindung */
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden; /* Wichtiger Trick: kein Leuchten außerhalb */
+
+  /* Leuchtende Rahmen von allen Seiten nach innen */
+  background:
+    linear-gradient(to top, rgba(0, 255, 255, 0.3), transparent 40%) top,
+    linear-gradient(to bottom, rgba(0, 255, 255, 0.3), transparent 40%) bottom,
+    linear-gradient(to left, rgba(0, 255, 255, 0.3), transparent 40%) left,
+    linear-gradient(to right, rgba(0, 255, 255, 0.3), transparent 40%) right;
+  background-repeat: no-repeat;
+  background-size: 100% 20%, 100% 20%, 20% 100%, 20% 100%;
+  animation: hologram-border-pulse 3s ease-in-out infinite;
+}
+
+@keyframes hologram-border-pulse {
+  0%, 100% {
+    background-size: 100% 20%, 100% 20%, 20% 100%, 20% 100%;
+    opacity: 0.6;
+  }
+  50% {
+    background-size: 100% 25%, 100% 25%, 25% 100%, 25% 100%;
+    opacity: 1;
+  }
 }
 
 /* Der innere, kleinere Rahmen hinter der Textarea */
@@ -221,39 +243,39 @@ body.hologram textarea {
   backdrop-filter: blur(8px); /* Gläserner, verschwommener Effekt */
   transition: all 0.3s ease;
   position: relative; /* Damit es über dem inneren Rahmen liegt */
-  z-index: 10; /* Damit der Textbereich über dem inneren Rahmen liegt */
+  
 }
 
 /* Pseudo-Element für den inneren Rahmen, der sichtbar vor der Textarea liegt */
 body.hologram textarea::before {
   content: "";
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
   border: 2px solid rgba(0, 255, 255, 0.7); /* Gleicher Rand wie der Container */
   border-radius: 12px; /* Etwas abgerundete Ecken */
-  z-index: 5; /* Der innere Rahmen liegt jetzt vor der Textarea und hinter dem Container */
+  z-index: 3; /* Sicherstellen, dass es vor der Textarea liegt */
 }
 
 /* Verbindungs-Linien zwischen innerem Rahmen und Container */
 body.hologram textarea::after {
   content: "";
   position: absolute;
-  top: -10px;
+  top: -8px;
   left: 50%;
   width: 2px;
   height: 10px;
   background-color: rgba(0, 255, 255, 0.7); /* Gleiche Farbe wie der Rand */
   transform: translateX(-50%); /* Horizontal zentrieren */
-  z-index: 0; /* Die Linien liegen hinter der Textarea und dem inneren Rahmen */
+  z-index: 2; /* Sicherstellen, dass es unterhalb des inneren Rahmens liegt */
 }
 
 body.hologram textarea:focus {
   outline: none;
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
-  border: 2px solid #ff00ff;
+  border: 2px solid #00ffff;
 }
 
 /* Animation für den holographischen Hintergrund */
@@ -310,3 +332,55 @@ body.hologram .back-link:hover {
   background: rgba(255, 0, 255, 0.1);
   transform: translateY(-2px);
 }
+
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+  body.hologram {
+    font-size: 14px;
+    padding: 1rem;
+  }
+
+  body.hologram .container {
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 -2px 4px rgba(255, 255, 255, 0.2);
+  }
+
+  body.hologram textarea {
+    padding: 1rem;
+    font-size: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.7), 0 0 12px rgba(255, 0, 255, 0.7), 0 0 18px rgba(255, 0, 255, 0.4);
+  }
+
+  body.hologram textarea::before {
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 10px;
+  }
+
+  body.hologram textarea::after {
+    height: 8px;
+  }
+
+  body.hologram h1 {
+    font-size: 1.3rem;
+  }
+
+  body.hologram p {
+    font-size: 1.2rem;
+  }
+
+  body.hologram select {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+
+  body.hologram .back-link {
+    font-size: 1.2rem;
+    padding: 4px;
+  }
+}
+
