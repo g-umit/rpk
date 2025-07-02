@@ -1,43 +1,45 @@
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  margin: 0;
 }
 
 header {
-  background: #f1c40f;
   padding: 1rem;
-  display: flex;
+  background: #f1c40f;
   justify-content: space-between;
-  align-items: center;
+  display: flex;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  align-items: center;
 }
 
 header h1 {
-  margin: 0;
   font-size: 1.5rem;
+  margin: 0;
 }
 
 select {
-  padding: 0.5rem;
   font-size: 1rem;
+  padding: 0.5rem;
 }
 
 .container {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 textarea {
-  width: 100%;
   height: 80vh;
+  width: 100%;
+  font-size: 1.2rem;
   padding: 1rem;
-  font-size: 1.3rem;
-  line-height: 1.6;
   border: none;
-  box-sizing: border-box;
+  line-height: 1.6;
   resize: none;
+  box-sizing: border-box;
 }
 
-/* ==== Themes ==== */
+/* ----------------------------------------------------- */
+
+/* Classic */
 body.classic {
   background: #fffbe6;
 }
@@ -48,6 +50,23 @@ body.classic textarea {
   font-family: "Courier New", monospace;
 }
 
+body.classic h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+body.classic p,
+body.classic .back-link {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ----------------------------------------------------- */
+
+/* Dark */
 body.dark {
   background: #1e1e1e;
 }
@@ -57,6 +76,23 @@ body.dark textarea {
   color: #f1f1f1;
   font-family: "Consolas", monospace;
 }
+
+body.dark h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+body.dark p,
+body.dark .back-link {
+  color: #f1f1f1;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ----------------------------------------------------- */
 
 body.modern {
   background: #f5f5f5;
@@ -69,6 +105,23 @@ body.modern textarea {
   font-family: "Segoe UI", sans-serif;
 }
 
+body.modern h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+body.modern p,
+body.modern .back-link {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ----------------------------------------------------- */
+
+/* Retro */
 body.retro {
   background: #faf3e0;
 }
@@ -76,11 +129,27 @@ body.retro {
 body.retro textarea {
   background: #fff2cc;
   color: #5d4037;
-  font-family: "Georgia", serif;
+  font-family: "Edu NSW ACT Cursive", cursive;
   border-left: 5px dashed #c49b66;
 }
 
-/* 🌸 Feminin - Blumenwiese */
+body.retro h1 {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+body.retro p,
+body.retro .back-link {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ----------------------------------------------------- */    
+
+/* Pink */
 body.feminine {
   background: url('img/bg1.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -88,19 +157,37 @@ body.feminine {
 }
 
 body.feminine textarea {
-  background: rgba(255, 240, 250, 0.9);
+  background: url('img/bg2.jpg') no-repeat center center fixed;
   color: #6b306e;
-  font-family: "Georgia", serif;
+  font-family: "Sacramento", cursive;
+  font-size: 2rem;
+  font-weight: bold;
   border-radius: 10px;
   border: 2px solid #e8a6d8;
   box-shadow: 0 0 10px rgba(255, 180, 230, 0.5);
 }
 
-/* 🌈 Neon - Cyber Glow */
+body.feminine h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+body.feminine p,
+body.feminine .back-link {
+  font-family: "Sacramento", cursive;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ----------------------------------------------------- */
+
+/* Neon  */
 body.neon {
   background: #000;
   font-family: "Tilt Neon", sans-serif;
-  color: #ffda95;
+  color: #ffeece;
   text-shadow:             
     0 0 4px #f14400,         
     0 0 8px #f14400,         
@@ -108,10 +195,12 @@ body.neon {
     0 0 24px #f14400; 
 }
 
+/* Textarea - Neon Design */
 body.neon textarea {
   background: #111;
-  color: #ffda95;
+  color: #ffeece;
   font-family: "Tilt Neon", sans-serif;
+  font-size: 1.5rem; /* Standardgröße für große Geräte */
   border: 6px solid #c5ecff;
   border-radius: 10px;
   text-shadow:             
@@ -123,31 +212,110 @@ body.neon textarea {
   /* Neon-Außen- und Innen-Schein */
   box-shadow:
     inset 0 0 8px #00aaff,
+    inset 0 0 12px #00aaff,
     inset 0 0 16px #00aaff,
-    inset 0 0 24px #00aaff,
     0 0 8px #00aaff,
-    0 0 16px #00aaff,
-    0 0 24px #00aaff;      
+    0 0 12px #00aaff,
+    0 0 16px #00aaff;        
   
   will-change: box-shadow;
   transform: translateZ(0);
   -webkit-appearance: none;
 }
 
-/* 🧊 3D-Stil */
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+  body.neon {
+    font-size: 1.5rem; /* Kleinere Schriftgröße für mobile Geräte */
+    padding: 1rem;
+  }
+
+  body.neon textarea {
+    font-size: 1.5rem;  /* Kleinere Schriftgröße für Textarea */
+    padding: 1rem;
+    border-radius: 8px;  /* Kleinere Abrundung für Textarea */
+    border: 6px solid #c5ecff;
+    
+    /* Neon-Außen- und Innen-Schein, auf mobilen Geräten reduziert */
+    box-shadow:
+      inset 0 0 6px #00aaff,
+      inset 0 0 8px #00aaff,
+      inset 0 0 12px #00aaff,
+      0 0 6px #00aaff,
+      0 0 8px #00aaff,
+      0 0 12px #00aaff;
+    
+    /* Weniger intensiver Textschatten auf mobilen Geräten */
+    text-shadow:
+      0 0 2px #f14400,
+      0 0 4px #f14400,
+      0 0 8px #f14400;
+  }
+
+  body.neon h1,
+  body.neon p,
+  body.neon .back-link {
+    font-size: 1.5rem;  /* Kleinere Schriftgröße für Absätze und Überschriften */
+    text-shadow:
+      0 0 4px #f14400,
+      0 0 8px #f14400,
+      0 0 12px #f14400;
+  }
+  
+  /* Box-Shadow für mobile Textarea optimiert */
+  body.neon textarea {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Optionale Text-Glow-Animation für mobile Geräte */
+  @keyframes neon-glow-mobile {
+    0%, 100% {
+      text-shadow:
+        0 0 2px #f14400,
+        0 0 4px #f14400,
+        0 0 8px #f14400;
+      color: #ffeece;
+    }
+    50% {
+      text-shadow:
+        0 0 10px #f14400,
+        0 0 20px #f14400,
+        0 0 30px #f14400;
+      color: #ff9900; /* Leichte Farbänderung */
+    }
+  }
+
+  /* Anwendung der Neon-Glow-Animation */
+  body.neon h1,
+  body.neon p,
+  body.neon .back-link {
+    animation: neon-glow-mobile 2s ease-in-out infinite;
+  }
+
+  body.neon p {
+    text-align: center;
+  }
+}
+
+/* ----------------------------------------------------- */
+
+/* 3D-Stil */
 body.threed {
-  background: #e0e0e0;
-  color: #333;
+  background: black;
 }
 
 body.threed textarea {
-  background: #fff;
+  background: url('img/3d.jpg') no-repeat center center;
+  background-size: 100% 100%;
   border: none;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2), -5px -5px 15px rgba(255,255,255,0.6);
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  color: #fff;
+  text-shadow: 2px 2px 0px #000, 4px 4px 0px #333, 6px 6px 0px #666;
   padding: 1.2rem;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 body.threed textarea:focus {
@@ -155,48 +323,14 @@ body.threed textarea:focus {
   box-shadow: inset 3px 3px 10px rgba(0,0,0,0.1), inset -3px -3px 10px rgba(255,255,255,0.7);
 }
 
-body.threed .preview {
-  background: #fdfdfd;
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-}
+/* ----------------------------------------------------- */
 
-footer,
-.back-link {
-  flex-shrink: 0;
-}
-
-.back-link {
-  color: #c5ecff;
-  font-size: 24px;
-  padding: 4px;
-  background: transparent;
-  text-shadow: 
-    0 0 8px #00aaff,
-    0 0 16px #00aaff,
-    0 0 14px #00aaff; 
-}
-
-footer {
-  font-size: 24px;
-  text-align: center;
-  padding: 4px;
-  background: transparent;
-}
-
-
-
-
-
-
-
-/* Dunkles Hologramm Glas-Display */
+/* Hologramm */
 body.hologram {
   background: #0a0a0a; /* Dunkler Hintergrund für das Glasdisplay */
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "VT323", monospace;
   color: #00ffff;
   background-size: 200% 200%;
-  animation: hologram-move 6s infinite linear;
 }
 
 /* Glas-Effekt */
@@ -207,26 +341,26 @@ body.hologram .container {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(0, 255, 255, 0.7);
   background-color: rgba(0, 0, 0, 0);
-  overflow: hidden; /* Wichtiger Trick: kein Leuchten außerhalb */
+  overflow: hidden;
 
   /* Leuchtende Rahmen von allen Seiten nach innen */
   background:
-    linear-gradient(to top, rgba(0, 255, 255, 0.3), transparent 40%) top,
-    linear-gradient(to bottom, rgba(0, 255, 255, 0.3), transparent 40%) bottom,
-    linear-gradient(to left, rgba(0, 255, 255, 0.3), transparent 40%) left,
-    linear-gradient(to right, rgba(0, 255, 255, 0.3), transparent 40%) right;
+    linear-gradient(to top, rgba(0, 255, 255, 0.3), transparent 20%) top,
+    linear-gradient(to bottom, rgba(0, 255, 255, 0.3), transparent 20%) bottom,
+    linear-gradient(to left, rgba(0, 255, 255, 0.3), transparent 30%) left,
+    linear-gradient(to right, rgba(0, 255, 255, 0.3), transparent 30%) right;
   background-repeat: no-repeat;
-  background-size: 100% 20%, 100% 20%, 20% 100%, 20% 100%;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   animation: hologram-border-pulse 3s ease-in-out infinite;
 }
 
 @keyframes hologram-border-pulse {
   0%, 100% {
-    background-size: 100% 20%, 100% 20%, 20% 100%, 20% 100%;
-    opacity: 0.6;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    opacity: 0.7;
   }
   50% {
-    background-size: 100% 25%, 100% 25%, 25% 100%, 25% 100%;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
     opacity: 1;
   }
 }
@@ -235,7 +369,7 @@ body.hologram .container {
 body.hologram textarea {
   background: rgba(0, 0, 0, 0); /* Durchsichtiger Hintergrund */
   color: #00ffff;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "VT323", monospace;
   border-radius: 10px;
   border: 2px solid rgba(0, 255, 255, 0.7); /* Nur der Rand ist sichtbar */
   padding: 1.2rem;
@@ -243,7 +377,6 @@ body.hologram textarea {
   backdrop-filter: blur(8px); /* Gläserner, verschwommener Effekt */
   transition: all 0.3s ease;
   position: relative; /* Damit es über dem inneren Rahmen liegt */
-  
 }
 
 /* Pseudo-Element für den inneren Rahmen, der sichtbar vor der Textarea liegt */
@@ -254,7 +387,7 @@ body.hologram textarea::before {
   left: -8px;
   right: -8px;
   bottom: -8px;
-  border: 2px solid rgba(0, 255, 255, 0.7); /* Gleicher Rand wie der Container */
+  border: 2px solid rgba(0, 255, 255, 0.6); /* Gleicher Rand wie der Container */
   border-radius: 12px; /* Etwas abgerundete Ecken */
   z-index: 3; /* Sicherstellen, dass es vor der Textarea liegt */
 }
@@ -267,7 +400,7 @@ body.hologram textarea::after {
   left: 50%;
   width: 2px;
   height: 10px;
-  background-color: rgba(0, 255, 255, 0.7); /* Gleiche Farbe wie der Rand */
+  background-color: rgba(0, 255, 255, 0.9); /* Gleiche Farbe wie der Rand */
   transform: translateX(-50%); /* Horizontal zentrieren */
   z-index: 2; /* Sicherstellen, dass es unterhalb des inneren Rahmens liegt */
 }
@@ -278,42 +411,51 @@ body.hologram textarea:focus {
   border: 2px solid #00ffff;
 }
 
-/* Animation für den holographischen Hintergrund */
-@keyframes hologram-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 /* Text mit Hologramm-Glas-Effekt */
-body.hologram h1,
-body.hologram p,
-body.hologram select {
+body.hologram p {
   text-shadow: 
     0 0 8px rgba(0, 255, 255, 0.9),
     0 0 12px rgba(255, 0, 255, 0.6),
     0 0 24px rgba(255, 0, 255, 0.3),
-    0 0 30px rgba(0, 255, 255, 0.5);
-  font-weight: bold;
-  color: #00ffff;
-  mix-blend-mode: screen; /* Holographischer Effekt durch Mischung */
+    0 0 30px rgba(0, 255, 255, 0.5),
+    0 0 45px rgba(255, 0, 255, 0.8),
+    0 0 60px rgba(0, 255, 255, 0.9);
+  mix-blend-mode: screen;
+  animation: hologram-glow 1.5s ease-in-out infinite;
+}
+
+/* Animation für pulsierenden Hologramm-Effekt */
+@keyframes hologram-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 8px rgba(0, 255, 255, 0.9),
+      0 0 12px rgba(255, 0, 255, 0.6),
+      0 0 24px rgba(255, 0, 255, 0.3),
+      0 0 30px rgba(0, 255, 255, 0.5),
+      0 0 45px rgba(255, 0, 255, 0.8),
+      0 0 60px rgba(0, 255, 255, 0.9);
+    color: #00ffff;
+  }
+  50% {
+    text-shadow:
+      0 0 12px rgba(0, 255, 255, 0.9),
+      0 0 18px rgba(255, 0, 255, 0.7),
+      0 0 36px rgba(255, 0, 255, 0.4),
+      0 0 45px rgba(0, 255, 255, 0.6),
+      0 0 70px rgba(255, 0, 255, 1),
+      0 0 80px rgba(0, 255, 255, 1);
+    color: #ff00ff;
+  }
 }
 
 /* Glühender Text-Effekt bei Hover */
-body.hologram select:hover,
-body.hologram h1:hover,
 body.hologram p:hover {
   color: #ff00ff;
   text-shadow: 
     0 0 8px rgba(0, 255, 255, 0.9),
     0 0 16px rgba(255, 0, 255, 0.8),
-    0 0 24px rgba(255, 0, 255, 0.5);
+    0 0 24px rgba(255, 0, 255, 0.5),
+    0 0 48px rgba(0, 255, 255, 0.6);
 }
 
 /* Zurück-Link Hover-Effekt */
@@ -348,7 +490,7 @@ body.hologram .back-link:hover {
 
   body.hologram textarea {
     padding: 1rem;
-    font-size: 20px;
+    font-size: 28px;
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0, 255, 255, 0.7), 0 0 12px rgba(255, 0, 255, 0.7), 0 0 18px rgba(255, 0, 255, 0.4);
   }
@@ -366,11 +508,12 @@ body.hologram .back-link:hover {
   }
 
   body.hologram h1 {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 
   body.hologram p {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    text-align: center;
   }
 
   body.hologram select {
@@ -379,8 +522,57 @@ body.hologram .back-link:hover {
   }
 
   body.hologram .back-link {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    padding: 4px;
+  }
+
+  /* Optimierung des Hologramm-Effekts für mobile Geräte */
+  body.hologram textarea {
+    color: #00ffff;
+    text-shadow:
+      0 0 6px rgba(0, 255, 255, 0.8),
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 255, 255, 0.3),
+      0 0 25px rgba(0, 255, 255, 0.5),
+      0 0 40px rgba(0, 255, 255, 0.7);
+    mix-blend-mode: screen;
+    animation: hologram-glow-mobile 4s ease-in-out infinite;
+  }
+
+  /* Mobile-spezifische Animation für Textglühen */
+  @keyframes hologram-glow-mobile {
+    0%, 100% {
+      text-shadow:
+        0 0 6px rgba(0, 255, 255, 0.8),
+        0 0 10px rgba(0, 255, 255, 0.6),
+        0 0 20px rgba(0, 255, 255, 0.3),
+        0 0 25px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(0, 255, 255, 0.7);
+      color: #00ffff;
+    }
+    50% {
+      text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.9),
+        0 0 15px rgba(0, 255, 255, 0.7),
+        0 0 30px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(0, 255, 255, 0.6),
+        0 0 60px rgba(0, 255, 255, 1);
+      color: #00ffff;
+    }
+  }
+
+  /* Anpassung für den Hover-Effekt (Focus für Touch) */
+  body.hologram textarea:focus {
+    color: #00ffff;
+    text-shadow:
+      0 0 10px rgba(0, 255, 255, 0.9),
+      0 0 15px rgba(0, 255, 255, 0.7),
+      0 0 30px rgba(0, 255, 255, 0.5),
+      0 0 40px rgba(0, 255, 255, 0.6);
+  }
+
+  body.hologram .back-link {
+    font-size: 1.7rem;
     padding: 4px;
   }
 }
-
