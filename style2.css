@@ -157,7 +157,7 @@ body.feminine {
 }
 
 body.feminine textarea {
-  background: url('img/bg2.jpg') no-repeat center center fixed;
+  background: url('img/bg2.jpg') no-repeat center center scroll;
   background-size: cover;
   background-position: center center;
   color: #6b306e;
@@ -186,7 +186,7 @@ body.feminine .back-link {
 /* Mobile Optimierung */
 @media (max-width: 768px) {
   body.feminine textarea {
-    background: url('img/bg2.jpg') no-repeat center center fixed;
+    background: url('img/bg2.jpg') no-repeat center center scroll;
     background-size: cover; 
     background-position: center center;
     font-size: 1.5rem;
