@@ -198,7 +198,7 @@ body.feminine .back-link {
 
 /* ----------------------------------------------------- */
 
-/* Neon  */
+/* Neon */
 body.neon {
   background: #000;
   font-family: "Tilt Neon", sans-serif;
@@ -215,7 +215,7 @@ body.neon textarea {
   background: #111;
   color: #ffeece;
   font-family: "Tilt Neon", sans-serif;
-  font-size: 1.5rem; /* Standardgröße für große Geräte */
+  font-size: 1.5rem;
   border: 6px solid #c5ecff;
   border-radius: 10px;
   text-shadow:             
@@ -233,24 +233,55 @@ body.neon textarea {
     0 0 12px #00aaff,
     0 0 16px #00aaff;        
   
-  will-change: box-shadow;
-  transform: translateZ(0);
-  -webkit-appearance: none;
+  /* Pulsierende Neon-Rahmen-Animation */
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Pulsierende Animation für Neon-Rahmen */
+@keyframes pulse {
+  0% {
+    border-color: #c5ecff;
+    box-shadow:
+      inset 0 0 8px #00aaff,
+      inset 0 0 12px #00aaff,
+      inset 0 0 16px #00aaff,
+      0 0 8px #00aaff,
+      0 0 12px #00aaff,
+      0 0 16px #00aaff;
+  }
+  50% {
+    border-color: #78d2ff;
+    box-shadow:
+      inset 0 0 8px #00aaff,
+      inset 0 0 12px #00aaff,
+      inset 0 0 16px #00aaff,
+      0 0 10px #00aaff,
+      0 0 14px #00aaff,
+      0 0 18px #00aaff;
+  }
+  100% {
+    border-color: #c5ecff;
+    box-shadow:
+      inset 0 0 8px #00aaff,
+      inset 0 0 12px #00aaff,
+      inset 0 0 16px #00aaff,
+      0 0 8px #00aaff,
+      0 0 12px #00aaff,
+      0 0 16px #00aaff;
+  }
 }
 
 /* Mobile Optimierung */
 @media (max-width: 768px) {
   body.neon {
-    font-size: 1.5rem; /* Kleinere Schriftgröße für mobile Geräte */
+    font-size: 1.5rem;
   }
 
   body.neon textarea {
-    font-size: 1.5rem;  /* Kleinere Schriftgröße für Textarea */
+    font-size: 1.5rem; 
     padding: 1rem;
-    border-radius: 8px;  /* Kleinere Abrundung für Textarea */
+    border-radius: 8px;
     border: 6px solid #c5ecff;
-    
-    /* Neon-Außen- und Innen-Schein, auf mobilen Geräten reduziert */
     box-shadow:
       inset 0 0 6px #00aaff,
       inset 0 0 8px #00aaff,
@@ -258,30 +289,27 @@ body.neon textarea {
       0 0 6px #00aaff,
       0 0 8px #00aaff,
       0 0 12px #00aaff;
-    
-    /* Weniger intensiver Textschatten auf mobilen Geräten */
     text-shadow:
       0 0 2px #f14400,
       0 0 4px #f14400,
       0 0 8px #f14400;
+    animation: pulse 1.5s ease-in-out infinite;
   }
 
   body.neon h1,
   body.neon p,
   body.neon .back-link {
-    font-size: 1.5rem;  /* Kleinere Schriftgröße für Absätze und Überschriften */
+    font-size: 1.5rem;
     text-shadow:
       0 0 4px #f14400,
       0 0 8px #f14400,
       0 0 12px #f14400;
   }
-  
-  /* Box-Shadow für mobile Textarea optimiert */
+
   body.neon textarea {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
-  /* Optionale Text-Glow-Animation für mobile Geräte */
   @keyframes neon-glow-mobile {
     0%, 100% {
       text-shadow:
@@ -295,11 +323,10 @@ body.neon textarea {
         0 0 10px #f14400,
         0 0 20px #f14400,
         0 0 30px #f14400;
-      color: #ff9900; /* Leichte Farbänderung */
+      color: #ffeece;
     }
   }
 
-  /* Anwendung der Neon-Glow-Animation */
   body.neon h1,
   body.neon p,
   body.neon .back-link {
@@ -315,26 +342,43 @@ body.neon textarea {
 
 /* 3D-Stil */
 body.threed {
-  background: black;
+  background: rgb(22, 22, 22);
 }
 
 body.threed textarea {
   background: url('img/3d.jpg') no-repeat center center;
   background-size: 100% 100%;
   border: none;
-  border-radius: 10px;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.7rem;
-  color: #fff;
-  text-shadow: 2px 2px 0px #000, 4px 4px 0px #333, 6px 6px 0px #666;
+  color: #f0f0f0;
+  text-shadow: 
+    3px 3px 5px rgba(255, 255, 255, 0.5), 
+    6px 6px 10px rgba(255, 255, 255, 0.3),
+    10px 10px 20px rgba(255, 255, 255, 0.1),
+    -2px -2px 10px rgba(255, 255, 255, 0.3);
   padding: 1.2rem;
   transition: all 0.2s ease;
   width: 100%;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.9);       
 }
 
 body.threed textarea:focus {
   outline: none;
-  box-shadow: inset 3px 3px 10px rgba(0,0,0,0.1), inset -3px -3px 10px rgba(255,255,255,0.7);
+  box-shadow: 
+    inset 3px 3px 10px rgba(0,0,0,0.1), 
+    inset -3px -3px 10px rgba(255, 255, 255, 0.4),
+    0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+  body.threed textarea {
+    background: url('img/3d.jpg') no-repeat center center;
+    background-size: 100% 100%;  
+    font-size: 1.5rem; 
+    padding: 1rem;
+  }
 }
 
 /* ----------------------------------------------------- */
