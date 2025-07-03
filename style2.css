@@ -296,6 +296,7 @@ body.neon textarea {
       0 0 4px #f14400,
       0 0 8px #f14400;
     animation: pulse 1.5s ease-in-out infinite;
+    transform: translateZ(0);
   }
 
   body.neon h1,
