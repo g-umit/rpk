@@ -37,6 +37,12 @@ textarea {
   box-sizing: border-box;
 }
 
+.back-link {
+  position: relative;
+  padding: 40px;
+  text-align: center;
+}
+
 /* ----------------------------------------------------- */
 
 /* Classic */
@@ -94,6 +100,7 @@ body.dark .back-link {
 
 /* ----------------------------------------------------- */
 
+/* Modern */
 body.modern {
   background: #f5f5f5;
 }
@@ -142,7 +149,7 @@ body.retro h1 {
 body.retro p,
 body.retro .back-link {
   font-family: "Edu NSW ACT Cursive", cursive;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
 }
@@ -353,16 +360,13 @@ body.threed p,
 body.threed .back-link {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5rem;
+  text-align: center;
   color: #f0f0f0;
   text-shadow: 
     3px 3px 5px rgba(255, 255, 255, 0.5), 
     6px 6px 10px rgba(255, 255, 255, 0.3),
     10px 10px 20px rgba(255, 255, 255, 0.1),
     -2px -2px 10px rgba(255, 255, 255, 0.3);
-}
-
-body.threed p {
-  text-align: center;
 }
 
 /* ----------------------------------------------------- */
