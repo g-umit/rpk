@@ -235,6 +235,8 @@ body.neon textarea {
   
   /* Pulsierende Neon-Rahmen-Animation */
   animation: pulse 1.5s ease-in-out infinite;
+  transform: translateZ(0); /* Performance Verbesserung */
+  will-change: box-shadow, border-color; /* Optimierung für Animation */
 }
 
 /* Pulsierende Animation für Neon-Rahmen */
