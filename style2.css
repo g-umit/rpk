@@ -229,43 +229,12 @@ body.neon textarea {
     inset 0 0 8px #00aaff,
     inset 0 0 12px #00aaff,
     inset 0 0 16px #00aaff,
+    inset 0 0 24px #00aaff,
     0 0 8px #00aaff,
     0 0 12px #00aaff,
-    0 0 16px #00aaff;        
-  
-  /* Pulsierende Neon-Rahmen-Animation */
-  animation: pulse 1.5s ease-in-out infinite;
-  transform: translateZ(0); /* Performance Verbesserung */
-  will-change: box-shadow, border-color; /* Optimierung für Animation */
-}
-
-/* Pulsierende Animation für Neon-Rahmen */
-@keyframes pulse {
-  0% {
-    border-color: #c5ecff;
-    box-shadow:
-      inset 0 0 8px #00aaff,
-      inset 0 0 12px #00aaff,
-      0 0 8px #00aaff,
-      0 0 12px #00aaff;
-  }
-  50% {
-    border-color: #78d2ff;
-    box-shadow:
-      inset 0 0 8px #00aaff,
-      inset 0 0 12px #00aaff,
-      0 0 10px #00aaff,
-      0 0 14px #00aaff;
-  }
-  100% {
-    border-color: #c5ecff;
-    box-shadow:
-      inset 0 0 8px #00aaff,
-      inset 0 0 12px #00aaff,
-      0 0 8px #00aaff,
-      0 0 12px #00aaff;
-  }
-}
+    0 0 16px #00aaff,  
+    0 0 24px #00aaff;       
+}        
 
 /* Mobile Optimierung */
 @media (max-width: 768px) {
@@ -279,18 +248,19 @@ body.neon textarea {
     border-radius: 8px;
     border: 6px solid #c5ecff;
     box-shadow:
-      inset 0 0 6px #00aaff,
+      inset 0 0 4px #00aaff,
       inset 0 0 8px #00aaff,
       inset 0 0 12px #00aaff,
-      0 0 6px #00aaff,
+      inset 0 0 16px #00aaff,
+      0 0 4px #00aaff,
       0 0 8px #00aaff,
-      0 0 12px #00aaff;
+      0 0 12px #00aaff,
+      0 0 16px #00aaff; 
     text-shadow:
-      0 0 2px #f14400,
-      0 0 4px #f14400,
-      0 0 8px #f14400;
-    animation: pulse 1.5s ease-in-out infinite;
-    transform: translateZ(0);
+      0 0 4px #f14400,         
+      0 0 8px #f14400,         
+      0 0 12px #f14400, 
+      0 0 16px #f14400; 
   }
 
   body.neon h1,
@@ -376,6 +346,23 @@ body.threed textarea:focus {
     font-size: 1.5rem; 
     padding: 1rem;
   }
+}
+
+body.threed h1,
+body.threed p,
+body.threed .back-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  text-shadow: 
+    3px 3px 5px rgba(255, 255, 255, 0.5), 
+    6px 6px 10px rgba(255, 255, 255, 0.3),
+    10px 10px 20px rgba(255, 255, 255, 0.1),
+    -2px -2px 10px rgba(255, 255, 255, 0.3);
+}
+
+body.threed p {
+  text-align: center;
 }
 
 /* ----------------------------------------------------- */
