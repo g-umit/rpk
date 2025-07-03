@@ -217,7 +217,6 @@ body.neon {
     0 0 24px #f14400; 
 }
 
-/* Textarea - Neon Design */
 body.neon textarea {
   background: #111;
   color: #ffeece;
@@ -230,8 +229,6 @@ body.neon textarea {
     0 0 8px #f14400,         
     0 0 16px #f14400, 
     0 0 24px #f14400; 
-
-  /* Neon-Außen- und Innen-Schein */
   box-shadow:
     inset 0 0 8px #00aaff,
     inset 0 0 12px #00aaff,
@@ -240,7 +237,10 @@ body.neon textarea {
     0 0 8px #00aaff,
     0 0 12px #00aaff,
     0 0 16px #00aaff,  
-    0 0 24px #00aaff;       
+    0 0 24px #00aaff; 
+  will-change: box-shadow;
+  transform: translateZ(0);
+  -webkit-appearance: none;
 }        
 
 /* Mobile Optimierung */
@@ -373,13 +373,12 @@ body.threed .back-link {
 
 /* Hologramm */
 body.hologram {
-  background: #0a0a0a; /* Dunkler Hintergrund für das Glasdisplay */
+  background: #0a0a0a;
   font-family: "VT323", monospace;
   color: #00ffff;
   background-size: 200% 200%;
 }
 
-/* Glas-Effekt */
 body.hologram .container {
   position: relative;
   padding: 2rem;
@@ -388,8 +387,6 @@ body.hologram .container {
   border: 2px solid rgba(0, 255, 255, 0.7);
   background-color: rgba(0, 0, 0, 0);
   overflow: hidden;
-
-  /* Leuchtende Rahmen von allen Seiten nach innen */
   background:
     linear-gradient(to top, rgba(0, 255, 255, 0.3), transparent 20%) top,
     linear-gradient(to bottom, rgba(0, 255, 255, 0.3), transparent 20%) bottom,
@@ -411,21 +408,19 @@ body.hologram .container {
   }
 }
 
-/* Der innere, kleinere Rahmen hinter der Textarea */
 body.hologram textarea {
-  background: rgba(0, 0, 0, 0); /* Durchsichtiger Hintergrund */
+  background: rgba(0, 0, 0, 0);
   color: #00ffff;
   font-family: "VT323", monospace;
   border-radius: 10px;
   border: 2px solid rgba(0, 255, 255, 0.7); /* Nur der Rand ist sichtbar */
   padding: 1.2rem;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(255, 0, 255, 0.4);
-  backdrop-filter: blur(8px); /* Gläserner, verschwommener Effekt */
+  backdrop-filter: blur(8px);
   transition: all 0.3s ease;
-  position: relative; /* Damit es über dem inneren Rahmen liegt */
+  position: relative;
 }
 
-/* Pseudo-Element für den inneren Rahmen, der sichtbar vor der Textarea liegt */
 body.hologram textarea::before {
   content: "";
   position: absolute;
@@ -433,12 +428,11 @@ body.hologram textarea::before {
   left: -8px;
   right: -8px;
   bottom: -8px;
-  border: 2px solid rgba(0, 255, 255, 0.6); /* Gleicher Rand wie der Container */
-  border-radius: 12px; /* Etwas abgerundete Ecken */
-  z-index: 3; /* Sicherstellen, dass es vor der Textarea liegt */
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  border-radius: 12px;
+  z-index: 3;
 }
 
-/* Verbindungs-Linien zwischen innerem Rahmen und Container */
 body.hologram textarea::after {
   content: "";
   position: absolute;
@@ -457,7 +451,6 @@ body.hologram textarea:focus {
   border: 2px solid #00ffff;
 }
 
-/* Text mit Hologramm-Glas-Effekt */
 body.hologram p {
   text-shadow: 
     0 0 8px rgba(0, 255, 255, 0.9),
@@ -470,7 +463,6 @@ body.hologram p {
   animation: hologram-glow 1.5s ease-in-out infinite;
 }
 
-/* Animation für pulsierenden Hologramm-Effekt */
 @keyframes hologram-glow {
   0%, 100% {
     text-shadow:
@@ -494,7 +486,6 @@ body.hologram p {
   }
 }
 
-/* Glühender Text-Effekt bei Hover */
 body.hologram p:hover {
   color: #ff00ff;
   text-shadow: 
@@ -504,7 +495,6 @@ body.hologram p:hover {
     0 0 48px rgba(0, 255, 255, 0.6);
 }
 
-/* Zurück-Link Hover-Effekt */
 body.hologram .back-link {
   text-decoration: none;
   color: #00ffff;
@@ -512,13 +502,6 @@ body.hologram .back-link {
   background: transparent;
   border-radius: 5px;
   padding: 5px;
-}
-
-body.hologram .back-link:hover {
-  color: #ff00ff;
-  text-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
-  background: rgba(255, 0, 255, 0.1);
-  transform: translateY(-2px);
 }
 
 /* Mobile Optimierung */
@@ -611,7 +594,6 @@ body.hologram .back-link:hover {
     }
   }
 
-  /* Anpassung für den Hover-Effekt (Focus für Touch) */
   body.hologram textarea:focus {
     color: #00ffff;
     text-shadow:
