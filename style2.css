@@ -159,7 +159,6 @@ body.feminine {
 body.feminine textarea {
   background: url('img/bg2.jpg') no-repeat center center scroll;
   background-size: cover;
-  background-position: center center;
   color: #6b306e;
   font-family: "Sacramento", cursive;
   font-size: 2rem;
@@ -188,7 +187,6 @@ body.feminine .back-link {
   body.feminine textarea {
     background: url('img/bg2.jpg') no-repeat center center scroll;
     background-size: cover; 
-    background-position: center center;
     font-size: 1.5rem;
     padding: 1rem;
   }
