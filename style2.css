@@ -255,19 +255,19 @@ body.neon textarea {
     border-radius: 8px;
     border: 6px solid #c5ecff;
     box-shadow:
+      inset 0 0 2px #00aaff,
       inset 0 0 4px #00aaff,
       inset 0 0 8px #00aaff,
       inset 0 0 12px #00aaff,
-      inset 0 0 16px #00aaff,
+      0 0 2px #00aaff,
       0 0 4px #00aaff,
       0 0 8px #00aaff,
-      0 0 12px #00aaff,
-      0 0 16px #00aaff; 
+      0 0 12px #00aaff; 
     text-shadow:
+      0 0 2px #f14400,         
       0 0 4px #f14400,         
-      0 0 8px #f14400,         
-      0 0 12px #f14400, 
-      0 0 16px #f14400; 
+      0 0 8px #f14400, 
+      0 0 12px #f14400; 
   }
 
   body.neon h1,
