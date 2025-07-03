@@ -242,7 +242,6 @@ body.neon textarea {
 @media (max-width: 768px) {
   body.neon {
     font-size: 1.5rem; /* Kleinere Schriftgröße für mobile Geräte */
-    padding: 1rem;
   }
 
   body.neon textarea {
@@ -493,21 +492,25 @@ body.hologram .back-link:hover {
 /* Mobile Optimierung */
 @media (max-width: 768px) {
   body.hologram {
-    font-size: 14px;
-    padding: 1rem;
+    font-size: 1.5rem;
   }
 
   body.hologram .container {
     padding: 1.2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.4), 
+      0 -2px 4px rgba(255, 255, 255, 0.2);
   }
 
   body.hologram textarea {
     padding: 1rem;
     font-size: 28px;
     border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 255, 255, 0.7), 0 0 12px rgba(255, 0, 255, 0.7), 0 0 18px rgba(255, 0, 255, 0.4);
+    box-shadow: 
+      0 0 6px rgba(0, 255, 255, 0.7), 
+      0 0 12px rgba(255, 0, 255, 0.7), 
+      0 0 18px rgba(255, 0, 255, 0.4);
   }
 
   body.hologram textarea::before {
