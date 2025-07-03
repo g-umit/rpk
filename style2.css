@@ -159,6 +159,7 @@ body.feminine {
 body.feminine textarea {
   background: url('img/bg2.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-position: center center;
   color: #6b306e;
   font-family: "Sacramento", cursive;
   font-size: 2rem;
@@ -180,6 +181,17 @@ body.feminine .back-link {
   font-size: 1.7rem;
   font-weight: bold;
   text-align: center;
+}
+
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+  body.feminine textarea {
+    background: url('img/bg2.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    background-position: center center;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
 }
 
 /* ----------------------------------------------------- */
