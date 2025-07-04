@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaktionstest Spiel</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+      color: white;
+    }
+
+    #game {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+    }
+
+    #message {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+
+    #screen {
+      width: 90%;
+      max-width: 500px;
+      height: 300px;
+      border-radius: 10px;
+      background-color: #333;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      transition: background-color 0.3s;
+    }
+
+    #screen.ready {
+      background-color: green;
+      color: black;
+    }
+
+    #screen.waiting {
+      background-color: red;
+    }
+
+    #screen.tooSoon {
+      background-color: orange;
+    }
+
+    #screen.done {
+      background-color: blue;
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    #footer .back-link {
+      display: inline-block;
+      margin-bottom: 5px;
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    #footer p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      #message {
+        font-size: 1.5rem;
+      }
+
+      #screen {
+        height: 250px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <div id="message">Tippe auf das Feld, um zu starten</div>
+    <div id="screen" class="waiting">Bereit?</div>
+  </div>
+  
+  <div id="footer">
+    <p>&copy; 2025 Ümit Güler</p>
+    <br><br><br><br>
+    <a class="back-link" href="index.html">🔙 Zurück zum Wochenplan</a>
+  </div>
+
+  <script>
+    const screen = document.getElementById("screen");
+    const message = document.getElementById("message");
+    let startTime = 0;
+    let timeoutId;
+
+    function startGame() {
+      screen.className = "waiting";
+      message.textContent = "Warte auf GRÜN...";
+      screen.textContent = "Bereit?";
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(() => {
+        screen.className = "ready";
+        screen.textContent = "JETZT!";
+        startTime = Date.now();
+      }, Math.random() * 2000 + 2000); // 2–4 Sekunden zufällig
+    }
+
+    screen.addEventListener("click", () => {
+      if (screen.classList.contains("waiting")) {
+        // Zu früh!
+        clearTimeout(timeoutId);
+        screen.className = "tooSoon";
+        message.textContent = "Zu früh! Tippe, um neu zu starten.";
+        screen.textContent = "Zu früh!";
+      } else if (screen.classList.contains("ready")) {
+        const reactionTime = Date.now() - startTime;
+        screen.className = "done";
+        message.textContent = `Reaktionszeit: ${reactionTime} ms`;
+        screen.textContent = "Nochmal?";
+      } else {
+        // Start von Neuem
+        startGame();
+      }
+    });
+  </script>
+</body>
+</html>
