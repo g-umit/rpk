@@ -218,3 +218,22 @@ function schedulePushNotification(title, body, delayInMs) {
     }, delayInMs);
   }
 }
+
+function getWeekRangeAndKW() {
+  const now = new Date();
+  const monday = getMondayOfCurrentWeek(new Date(now)); // Montag dieser Woche
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+
+  // KW berechnen (nach ISO 8601)
+  const temp = new Date(monday);
+  temp.setHours(0, 0, 0, 0);
+  temp.setDate(temp.getDate() + 3 - ((temp.getDay() + 6) % 7));
+  const week1 = new Date(temp.getFullYear(), 0, 4);
+  const kw = 1 + Math.round(((temp.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+
+  const formatted = `KW ${kw} – ${formatDate(monday)} bis ${formatDate(sunday)}`;
+  document.getElementById("week-info").innerText = formatted;
+}
+
+getWeekRangeAndKW();
