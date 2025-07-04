@@ -220,39 +220,39 @@ function schedulePushNotification(title, body, delayInMs) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    function getMondayOfCurrentWeek(date) {
-      const day = date.getDay();
-      const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-      return new Date(date.setDate(diff));
+  function getMondayOfCurrentWeek(date) {
+    const day = date.getDay();
+    const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+    return new Date(date.setDate(diff));
+  }
+
+  function formatDate(date) {
+    return date.toLocaleDateString('de-DE', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+  }
+
+  function getWeekRangeAndKW() {
+    const now = new Date();
+    const monday = getMondayOfCurrentWeek(new Date(now));
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+
+    // ISO 8601 Kalenderwoche berechnen
+    const temp = new Date(monday);
+    temp.setHours(0, 0, 0, 0);
+    temp.setDate(temp.getDate() + 3 - ((temp.getDay() + 6) % 7));
+    const week1 = new Date(temp.getFullYear(), 0, 4);
+    const kw = 1 + Math.round(((temp - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+
+    const formatted = `KW ${kw} – ${formatDate(monday)} bis ${formatDate(sunday)}`;
+    const weekInfoDiv = document.getElementById("week-info");
+    if (weekInfoDiv) {
+      weekInfoDiv.innerText = formatted;
     }
+  }
 
-    function formatDate(date) {
-      return date.toLocaleDateString('de-DE', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-      });
-    }
-
-    function getWeekRangeAndKW() {
-      const now = new Date();
-      const monday = getMondayOfCurrentWeek(new Date(now));
-      const sunday = new Date(monday);
-      sunday.setDate(monday.getDate() + 6);
-
-      // ISO 8601 Kalenderwoche berechnen
-      const temp = new Date(monday);
-      temp.setHours(0, 0, 0, 0);
-      temp.setDate(temp.getDate() + 3 - ((temp.getDay() + 6) % 7));
-      const week1 = new Date(temp.getFullYear(), 0, 4);
-      const kw = 1 + Math.round(((temp - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
-
-      const formatted = `KW ${kw} – Woche vom ${formatDate(monday)} bis ${formatDate(sunday)}`;
-      const weekInfoDiv = document.getElementById("week-info");
-      if (weekInfoDiv) {
-        weekInfoDiv.innerText = formatted;
-      }
-    }
-
-    getWeekRangeAndKW();
-  });
+  getWeekRangeAndKW();
+});
