@@ -37,6 +37,8 @@ caption {
 h1 {
   font-size: 80px;
   text-align: center;
+  padding: 40px;
+  margin: 100px 0 40px;
 }
 
 h2 {
@@ -227,4 +229,11 @@ label { font-size: 60px; }
 footer {
   text-align: center;
   margin: 150px 0 100px;
+}
+
+.week-info {
+  font-size: 48px;
+  text-align: center;
+  color: #444;
+  margin-bottom: 100px;
 }
