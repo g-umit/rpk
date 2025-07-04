@@ -537,6 +537,7 @@ body.hologram .back-link {
   body.hologram textarea {
     padding: 1rem;
     font-size: 28px;
+    border: 4px;
     border-radius: 8px;
     box-shadow: 
       0 0 6px rgba(0, 255, 255, 0.7), 
@@ -573,19 +574,6 @@ body.hologram .back-link {
   body.hologram .back-link {
     font-size: 1.7rem;
     padding: 4px;
-  }
-
-  /* Optimierung des Hologramm-Effekts für mobile Geräte */
-  body.hologram textarea {
-    color: #00ffff;
-    text-shadow:
-      0 0 6px rgba(0, 255, 255, 0.8),
-      0 0 10px rgba(0, 255, 255, 0.6),
-      0 0 20px rgba(0, 255, 255, 0.3),
-      0 0 25px rgba(0, 255, 255, 0.5),
-      0 0 40px rgba(0, 255, 255, 0.7);
-    mix-blend-mode: screen;
-    animation: hologram-glow-mobile 4s ease-in-out infinite;
   }
 
   /* Mobile-spezifische Animation für Textglühen */
